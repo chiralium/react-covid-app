@@ -1,0 +1,75 @@
+html, body {
+    margin: 0 !important;
+}
+
+.add-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 48pt;
+    color: grey;
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #b4d8d8;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: flex; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-close {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    font-size: 16pt;
+    border: 2px solid #fd7a7a;
+    padding: 4px;
+    color: #5d1515;
+}
+
+.overlay-close:hover {
+    filter: inset(100);
+}
+
+.country-input {
+    width: 20%;
+    border-radius: 5px;
+    height: 70px;
+    font-size: 65px;
+}
+
+.country-suggestions {
+    width: 20%;
+    border-radius: 5px;
+    height: 70px;
+}
