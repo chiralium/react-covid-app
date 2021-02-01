@@ -9,7 +9,10 @@ class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                Summary Countries: { this.props.countries.length }
+                <div className="text-bold dark">Summary Countries: { this.props.countries_count }</div>
+                <div className="text-bold black">Death: 0</div>
+                <div className="text-bold green">Alive: 0</div>
+                <div className="text-bold yellow">Infected: 0</div>
             </div>
         );
     }
@@ -17,7 +20,7 @@ class Header extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        countries : state
+        countries_count : state.count
     }
 }
 

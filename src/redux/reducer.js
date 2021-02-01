@@ -1,7 +1,25 @@
-export const reducer = function( state = [], action ) {
+export const initialState = {
+    count : 0,
+    countries : [],
+    summary : {
+        death : null,
+        alive : null,
+        infected : null
+    }
+}
+
+export const reducer = function( state = initialState, action ) {
     switch ( action.type ) {
         case "ADD_COUNTRY":
-            return [ ...state, action.country ];
+            console.log( action.country );
+            return {
+                ...state,
+                count : state.count + 1,
+                countries: [
+                    ...state.countries,
+                    action.country,
+                ]
+            }
         default:
             return state;
     }

@@ -6,15 +6,23 @@ import App from '../src/components/App';
 
 import '@testing-library/jest-dom';
 
+import { initialState } from "../src/redux/reducer";
+
 it(
     'Test #3: Render Header-component with reducer',
     () => {
         render(
             <Header/>,
             {
-                initialState : [
-                    "Urkaine"
-                ]
+                initialState : {
+                    count : 1,
+                    countries : ["Ukraine"],
+                    summary : {
+                        death : null,
+                        alive : null,
+                        infected : null
+                    }
+                }
             }
         );
         expect(screen.getByText(/Summary Countries: 1/)).toBeInTheDocument();
@@ -27,7 +35,7 @@ it(
         render(
             <App/>,
             {
-                initialState : []
+                initialState
             }
         );
         expect(screen.getByText(/\+/)).toBeInTheDocument();

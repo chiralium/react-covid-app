@@ -11,7 +11,6 @@ class App extends React.Component {
         this.state = {
             country_name : "",
             text_field_add_county_show : false,
-
             suggested_countries : []
         }
 
@@ -46,10 +45,11 @@ class App extends React.Component {
     }
 
     render() {
+        console.log( this.props );
         return (
             <>
                 <Header/>
-                { this.props.countries.length === 0 &&
+                { this.props.store.count === 0 &&
                     <div className="add-button" onClick={ () => this.setState({ text_field_add_county_show : true }) }>+</div>
                 }
                 { this.state.text_field_add_county_show &&
@@ -66,7 +66,9 @@ class App extends React.Component {
                                 this.state.suggested_countries.map(
                                     (name, index) => {
                                         return (
-                                            <option key={index} onClick={ (name) => this.add_country_handler(name) }>{name}</option>
+                                            <option key={index}
+                                                    onClick={ (e) => this.add_country_handler(e.target.value) }
+                                            >{name}</option>
                                         )
                                     }
                                 )
@@ -97,7 +99,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        countries : state
+        store : state
     }
 }
 

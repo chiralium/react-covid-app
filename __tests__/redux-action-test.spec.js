@@ -1,5 +1,5 @@
 import { add_country_action } from "../src/redux/actions";
-import { reducer } from "../src/redux/reducer";
+import { reducer, initialState } from "../src/redux/reducer";
 
 describe(
     'actions',
@@ -27,7 +27,7 @@ describe(
                         {}
                     )
                 ).toEqual(
-                    []
+                    initialState
                 )
             }
         );

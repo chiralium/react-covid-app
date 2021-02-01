@@ -73,3 +73,23 @@ html, body {
     border-radius: 5px;
     height: 70px;
 }
+
+.text-bold {
+    font-weight: bold;
+}
+
+.dark {
+    color: #3e1f52;
+}
+
+.black {
+    color: black;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: #939347;
+}
