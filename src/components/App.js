@@ -66,7 +66,6 @@ class App extends React.Component {
                                 return (
                                     <Country
                                         country_name={name}
-
                                         key={index}
                                     />
                                 );

@@ -94,4 +94,38 @@ it(
         );
         expect(screen.getByText(/Ukraine/)).toBeInTheDocument();
     }
+);
+
+it(
+    'Test #8: unknown country',
+    () => {
+        render(
+            <App/>,
+            {
+                initialState : {
+                    ...initialState,
+                    count : 1,
+                    countries : ["Unknown"]
+                }
+            }
+        );
+        expect(screen.getByText(/Unknow/)).toBeInTheDocument();
+    }
+);
+
+it(
+    'Test #9: Country component is mounted',
+    () => {
+        render(
+            <App/>,
+            {
+                initialState : {
+                    ...initialState,
+                    count : 1,
+                    countries : ["Ukraine"]
+                }
+            }
+        );
+        expect(screen.getByText(/ADD/)).toBeInTheDocument();
+    }
 )

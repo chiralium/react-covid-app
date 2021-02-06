@@ -46,21 +46,26 @@ const Country = (props) => {
                 );
         },
         []
-    )
+    );
 
     return (
-        <div className="country_box">
-            <div className="aligned-center">{props.country_name}</div>
-            <div className="label dark">
-                deaths: { death ? death : "loading..."}
+        <>
+            <div className="country_box">
+                <div className="aligned-center">{props.country_name}</div>
+                <div className="label dark">
+                    deaths: { death ? death : "loading..."}
+                </div>
+                <div className="label green">
+                    alive: { alive ? alive : "loading..."}
+                </div>
+                <div className="label yellow">
+                    infected: { infected ? infected : "loading..." }
+                </div>
             </div>
-            <div className="label green">
-                alive: { alive ? alive : "loading..."}
+            <div className="country_box country_added">
+                <span>ADD</span>
             </div>
-            <div className="label yellow">
-                infected: { infected ? infected : "loading..." }
-            </div>
-        </div>
+        </>
     );
 };
 
