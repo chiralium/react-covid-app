@@ -1,5 +1,30 @@
+* { padding: 0; margin: 0; }
 html, body {
     margin: 0 !important;
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+.container {
+    margin-top: 50px;
+    border-radius: 7px;
+    height: 100%;
+    min-height: 100% !important;
+}
+
+.country_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.country_box {
+    width: 240px;
+    border-radius: 7px;
+    background-color: #b3bbbb;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: left;
+    padding: 5px;
 }
 
 .add-button {
@@ -92,4 +117,14 @@ html, body {
 
 .yellow {
     color: #939347;
+}
+
+.label {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.aligned-center {
+    text-align: center;
+    margin: 0 auto;
 }

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry : './src/index.js',
@@ -21,7 +22,13 @@ module.exports = {
                 template: __dirname + "/index.html",
                 inject: "body"
             }
-        )
+        ),
+        new webpack.DefinePlugin({
+            'process.env' : {
+                'API_URL' : JSON.stringify('https://api.covid19api.com/'),
+                'AUTH_KEY' : JSON.stringify("5cf9dfd5-3449-485e-b5ae-70a60e997864")
+            }
+        }),
     ],
 
     devServer: {

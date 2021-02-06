@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from "./Header";
+import Country from "./Country";
 import { add_country_action,
          get_initial_summary_data_action } from "../redux/actions";
 
@@ -55,10 +56,26 @@ class App extends React.Component {
     }
 
     render() {
-        console.log( this.props );
         return (
             <>
                 <Header/>
+                { this.props.store.count > 0 &&
+                    <div className="container country_list">
+                        { this.props.store.countries.map(
+                            (name, index) => {
+                                return (
+                                    <Country
+                                        country_name={name}
+
+                                        key={index}
+                                    />
+                                );
+                            }
+                         )
+                        }
+                    </div>
+                }
+
                 { this.props.store.count === 0 &&
                     <div className="add-button" onClick={ () => this.setState({ text_field_add_county_show : true }) }>+</div>
                 }

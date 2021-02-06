@@ -5,7 +5,8 @@ export const initialState = {
         death : 0,
         alive : 0,
         infected : 0
-    }
+    },
+    is_loading : false
 }
 
 export const reducer = function( state = initialState, action ) {
@@ -20,10 +21,17 @@ export const reducer = function( state = initialState, action ) {
                 ]
             }
 
-        case "FETCH_SUMMARY_DATA":
+        case 'FETCH_SUMMARY_DATA_LOAD':
             return {
                 ...state,
-                summary: action.payload
+                is_loading: true
+            }
+
+        case "FETCH_SUMMARY_DATA_SUCCESS":
+            return {
+                ...state,
+                summary: action.payload,
+                is_loading: false
             }
 
         default:

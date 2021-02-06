@@ -1,4 +1,4 @@
-import { add_country_action } from "../src/redux/actions";
+import { add_country_action, get_initial_summary_data_action } from "../src/redux/actions";
 import { reducer, initialState } from "../src/redux/reducer";
 
 describe(

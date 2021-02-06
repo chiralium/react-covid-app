@@ -61,4 +61,37 @@ it(
         );
         expect(screen.getByText(/Alive: 431/)).toBeInTheDocument();
     }
+);
+
+it(
+    'Test #6: is_loading on header',
+    () => {
+        render(
+            <Header/>,
+            {
+                initialState : {
+                    ...initialState,
+                    is_loading : true
+                }
+            }
+        );
+        expect(screen.getByText(/Loading.../)).toBeInTheDocument();
+    }
+);
+
+it(
+    'Test #7: is country added',
+    () => {
+        render(
+            <App/>,
+            {
+                initialState : {
+                    ...initialState,
+                    count : 1,
+                    countries : ["Ukraine"]
+                }
+            }
+        );
+        expect(screen.getByText(/Ukraine/)).toBeInTheDocument();
+    }
 )
