@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from "./Header";
-import { add_country_action } from "../redux/actions";
+import { add_country_action,
+         get_initial_summary_data_action } from "../redux/actions";
 
 class App extends React.Component {
     constructor(props) {
@@ -42,6 +43,15 @@ class App extends React.Component {
                     this.setState({ suggested_countries : suggested });
                 }
             )
+            .catch(
+                (e) => {
+                    console.log( e );
+                }
+            );
+    }
+
+    componentDidMount() {
+        this.props.get_summary_data();
     }
 
     render() {
@@ -93,6 +103,10 @@ const mapDispatchToProps = dispatch => {
     return {
         add_country : country => {
             dispatch( add_country_action( country ) );
+        },
+
+        get_summary_data : () => {
+            dispatch( get_initial_summary_data_action() )
         }
     }
 }

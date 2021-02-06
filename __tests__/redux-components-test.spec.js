@@ -41,3 +41,24 @@ it(
         expect(screen.getByText(/\+/)).toBeInTheDocument();
     }
 )
+
+it(
+    'Test #5: Render load and render summary data',
+    () => {
+        render(
+            <Header/>,
+            {
+                initialState : {
+                    count : 1,
+                    countries : ["Ukraine"],
+                    summary : {
+                        death : 123,
+                        alive : 431,
+                        infected : 111
+                    }
+                }
+            }
+        );
+        expect(screen.getByText(/Alive: 431/)).toBeInTheDocument();
+    }
+)

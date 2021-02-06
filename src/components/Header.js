@@ -10,9 +10,9 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <div className="text-bold dark">Summary Countries: { this.props.countries_count }</div>
-                <div className="text-bold black">Death: 0</div>
-                <div className="text-bold green">Alive: 0</div>
-                <div className="text-bold yellow">Infected: 0</div>
+                <div className="text-bold black">Death: { this.props.death } </div>
+                <div className="text-bold green">Alive: { this.props.alive } </div>
+                <div className="text-bold yellow">Infected: { this.props.infected }</div>
             </div>
         );
     }
@@ -20,7 +20,10 @@ class Header extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        countries_count : state.count
+        countries_count : state.count,
+        death : state.summary.death,
+        alive : state.summary.alive,
+        infected : state.summary.infected
     }
 }
 
